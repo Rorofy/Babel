@@ -1,0 +1,13 @@
+Protocol
+    1XX client to client
+    2XX client to server
+    3XX server to client
+
+client/server
+    AUTH
+        client -> server : login (username: std::string) -> 200 // ask for auth to the server
+        server -> client : login response (ok: bool, token: std::string) -> 300 // Answer to the client if login is accepted with token if suceeded
+        client -> server : register (username: std::string) -> 201
+        server -> client : register response (ok: bool, token) -> 301 // Answer to the client if register is accepted
+
+client/client
